@@ -7,8 +7,8 @@ from urllib.parse import quote
 link = 'https://docs.google.com/forms/d/e/1FAIpQLSeeuouYCKDvMADU40Md0k9nFSiiIe2OwWS8qPPjL1GcCwrRiA/viewform'
 link = link.replace('viewform', 'formResponse')
 
-# declare options
-options = ['Option 1', 'Option 2', 'Option 3', 'Option 4']
+# declare form options
+formOptions = ['Option 1', 'Option 2', 'Option 3', 'Option 4']
 
 # decalre the incognitio option and the browser instance
 option = webdriver.ChromeOptions()
@@ -17,10 +17,10 @@ browser = webdriver.Chrome(options=option)
 
 for _ in range(10):
     # random choices with different weights
-    a = choices(options, [1, 3, 5, 1])[0]
-    b = choices(options, [5, 3, 2, 1])[0]
-    c = choices(options, [2, 1, 1, 10])[0]
-    d = choices(options)[0]
+    a = choices(formOptions, [1, 3, 5, 1])[0]
+    b = choices(formOptions, [5, 3, 2, 1])[0]
+    c = choices(formOptions, [2, 1, 1, 10])[0]
+    d = choices(formOptions)[0]
     scale = choices(range(1, 6), [1, 2, 3, 10, 5])[0]
     # random open-ended answers url percent encoded
     longAnswer = quote(Faker().text(), safe='')
